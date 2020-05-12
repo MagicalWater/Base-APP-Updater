@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  rxdart: "^0.22.0"
+  rxdart: ^0.24.0
 
   # 權限檢查
   permission_handler: "^3.2.2"
