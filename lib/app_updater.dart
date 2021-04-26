@@ -75,7 +75,7 @@ class AppUpdater {
     // 檢查是否有外部 storage 的權限
     print("android 檢查權限");
     var permissionStatus =
-        await Permission.storage.status;
+        await Permission.storage.request();
     print("storage權限狀態: $permissionStatus");
 
     if (permissionStatus == PermissionStatus.granted) {
