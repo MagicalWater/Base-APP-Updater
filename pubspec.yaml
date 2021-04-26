@@ -11,17 +11,16 @@ dependencies:
   flutter:
     sdk: flutter
 
-  rxdart: ^0.24.0
+  rxdart: "^0.26.0"
 
   # 權限檢查
-  permission_handler: "^3.2.2"
+  permission_handler: "^7.0.0"
 
   # url 開啟
-  url_launcher: "^5.1.4"
+  url_launcher: "^6.0.3"
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

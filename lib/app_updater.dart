@@ -74,11 +74,11 @@ class AppUpdater {
   static Future<void> _downloadAndroidApk(String url) async {
     // 檢查是否有外部 storage 的權限
     print("android 檢查權限");
-    var permissions =
-        await PermissionHandler().requestPermissions([PermissionGroup.storage]);
-    print("擁有的權限: $permissions");
+    var permissionStatus =
+        await Permission.storage.status;
+    print("storage權限狀態: $permissionStatus");
 
-    if (permissions[PermissionGroup.storage] == PermissionStatus.granted) {
+    if (permissionStatus == PermissionStatus.granted) {
       print("擁有讀寫外部儲存空間的權限, 開始下載");
       _currentDownloadUrl = url;
       var receiveStream = _eventChannel.receiveBroadcastStream(url);
