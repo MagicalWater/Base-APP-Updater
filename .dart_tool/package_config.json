@@ -119,10 +119,10 @@
       "name": "app_updater",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "2.1"
+      "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-04-26T03:26:54.192618Z",
+  "generated": "2021-05-07T06:19:35.032672Z",
   "generator": "pub",
   "generatorVersion": "2.12.3"
 }
