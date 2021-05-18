@@ -59,10 +59,12 @@ class AppUpdater {
       }
       await launch(url);
     } else if (Platform.isAndroid) {
-      if (openWeb) {
+      if (!openWeb) {
+        print("android 因為play商店禁止問題, 取消下載apk直接安裝更新的方式, 自動更改為開啟web");
+        // await _downloadAndroidApk(url);
         await launch(url);
       } else {
-        await _downloadAndroidApk(url);
+        await launch(url);
       }
     } else {
       print("未知系統, 無法進行更新: ${Platform.operatingSystem}, 嘗試開啟 url web");
