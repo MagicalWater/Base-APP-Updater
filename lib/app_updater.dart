@@ -14,7 +14,7 @@ class AppUpdater {
   static bool get isDownloading => _isDownloading;
 
   /// 當前下載 url
-  static String get currentDownloadUrl => _currentDownloadUrl;
+  static String? get currentDownloadUrl => _currentDownloadUrl;
 
   /// 當前的下載進度
   static int get currentProgress {
@@ -31,13 +31,13 @@ class AppUpdater {
   static const _eventChannel = const EventChannel(_channelName);
 
   /// 下載事件訂閱監聽
-  static StreamSubscription _downloadSubscription;
+  static StreamSubscription? _downloadSubscription;
 
   /// 當前是否正在下載中
   static bool _isDownloading = false;
 
   /// 當前正在下載的 url 回調
-  static String _currentDownloadUrl;
+  static String? _currentDownloadUrl;
 
   /// 進度subject
   static BehaviorSubject<DownloadData> _downloadSubject = BehaviorSubject();
@@ -74,8 +74,7 @@ class AppUpdater {
   static Future<void> _downloadAndroidApk(String url) async {
     // 檢查是否有外部 storage 的權限
     print("android 檢查權限");
-    var permissionStatus =
-        await Permission.storage.request();
+    var permissionStatus = await Permission.storage.request();
     print("storage權限狀態: $permissionStatus");
 
     if (permissionStatus == PermissionStatus.granted) {
@@ -166,8 +165,9 @@ class AppUpdater {
   }
 
   static void dispose() {
-    _downloadSubject?.close();
+    _downloadSubject.close();
     _downloadSubscription?.cancel();
+    _downloadSubscription = null;
   }
 }
 
@@ -180,23 +180,21 @@ class DownloadData {
   int progress;
 
   /// 下載錯誤時的 Error 訊息
-  UpdateError error;
+  UpdateError? error;
 
   DownloadData({
-    this.status,
-    this.progress = 0,
+    required this.status,
+    required this.progress,
     this.error,
   });
 
-  DownloadData.progress(this.progress) {
-    this.status = DownloadStatus.downloading;
-    this.progress = progress;
-  }
+  DownloadData.progress(this.progress)
+      : this.status = DownloadStatus.downloading;
 }
 
 class UpdateError extends Error implements Exception {
   final UpdateErrorType type;
-  String message;
+  String? message;
 
   UpdateError._(this.type, [this.message]);
 

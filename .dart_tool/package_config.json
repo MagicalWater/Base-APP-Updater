@@ -39,25 +39,25 @@
     },
     {
       "name": "permission_handler",
-      "rootUri": "file:///Users/magicalwater/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/permission_handler-7.0.0",
+      "rootUri": "file:///Users/magicalwater/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/permission_handler-8.1.6",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "permission_handler_platform_interface",
-      "rootUri": "file:///Users/magicalwater/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/permission_handler_platform_interface-3.3.0",
+      "rootUri": "file:///Users/magicalwater/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/permission_handler_platform_interface-3.6.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "plugin_platform_interface",
-      "rootUri": "file:///Users/magicalwater/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-2.0.0",
+      "rootUri": "file:///Users/magicalwater/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-2.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "rxdart",
-      "rootUri": "file:///Users/magicalwater/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/rxdart-0.26.0",
+      "rootUri": "file:///Users/magicalwater/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/rxdart-0.27.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -75,37 +75,37 @@
     },
     {
       "name": "url_launcher",
-      "rootUri": "file:///Users/magicalwater/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-6.0.3",
+      "rootUri": "file:///Users/magicalwater/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-6.0.10",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "url_launcher_linux",
-      "rootUri": "file:///Users/magicalwater/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_linux-2.0.0",
+      "rootUri": "file:///Users/magicalwater/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_linux-2.0.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "url_launcher_macos",
-      "rootUri": "file:///Users/magicalwater/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_macos-2.0.0",
+      "rootUri": "file:///Users/magicalwater/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_macos-2.0.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "url_launcher_platform_interface",
-      "rootUri": "file:///Users/magicalwater/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_platform_interface-2.0.2",
+      "rootUri": "file:///Users/magicalwater/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_platform_interface-2.0.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "url_launcher_web",
-      "rootUri": "file:///Users/magicalwater/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_web-2.0.0",
+      "rootUri": "file:///Users/magicalwater/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_web-2.0.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "url_launcher_windows",
-      "rootUri": "file:///Users/magicalwater/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_windows-2.0.0",
+      "rootUri": "file:///Users/magicalwater/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_windows-2.0.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -119,10 +119,10 @@
       "name": "app_updater",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "2.7"
+      "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-05-07T06:19:35.032672Z",
+  "generated": "2021-09-22T01:46:20.593081Z",
   "generator": "pub",
-  "generatorVersion": "2.12.3"
+  "generatorVersion": "2.13.0"
 }
