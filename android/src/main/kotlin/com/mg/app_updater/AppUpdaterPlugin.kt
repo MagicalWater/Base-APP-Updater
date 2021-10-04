@@ -1,12 +1,9 @@
 package com.mg.app_updater
 
-import android.content.Context
 //import com.king.app.updater.AppUpdater
 //import com.king.app.updater.callback.UpdateCallback
-import com.mg.app_updater.DownloadStatus.*
+import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.EventChannel
-import io.flutter.plugin.common.PluginRegistry.Registrar
-import java.io.File
 
 /// 事件 tag
 class EventTag {
@@ -27,7 +24,7 @@ class Event {
     }
 }
 
-class AppUpdaterPlugin(private var context: Context) : EventChannel.StreamHandler {
+class AppUpdaterPlugin : FlutterPlugin, EventChannel.StreamHandler {
 
 //    private var updater: AppUpdater? = null
 
@@ -35,15 +32,9 @@ class AppUpdaterPlugin(private var context: Context) : EventChannel.StreamHandle
 //
 //    private var lastDownloadTag = 0
 
-    private var downloadStatus: MutableMap<Int, DownloadStatus> = mutableMapOf()
+    private lateinit var channel: EventChannel
 
-    companion object {
-        @JvmStatic
-        fun registerWith(registrar: Registrar) {
-            val channel = EventChannel(registrar.messenger(), "app_updater")
-            channel.setStreamHandler(AppUpdaterPlugin(registrar.context()))
-        }
-    }
+    private var downloadStatus: MutableMap<Int, DownloadStatus> = mutableMapOf()
 
     override fun onListen(p0: Any?, p1: EventChannel.EventSink?) {
 
@@ -170,6 +161,16 @@ class AppUpdaterPlugin(private var context: Context) : EventChannel.StreamHandle
 //            updater = null
 //        }
     }
+
+    override fun onAttachedToEngine(binding: FlutterPlugin.FlutterPluginBinding) {
+        channel = EventChannel(binding.binaryMessenger, "app_updater")
+        channel.setStreamHandler(this)
+    }
+
+    override fun onDetachedFromEngine(binding: FlutterPlugin.FlutterPluginBinding) {
+        channel.setStreamHandler(null)
+    }
+
 }
 
 enum class DownloadStatus {
