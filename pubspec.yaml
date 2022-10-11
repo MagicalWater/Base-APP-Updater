@@ -1,23 +1,23 @@
 name: app_updater
 description: A new Flutter plugin.
-version: 2.0.0+2
+version: 2.0.1+1
 author: Water
 homepage: https://github.com/MagicalWater
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.17.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  rxdart: "^0.27.2"
+  rxdart: ^0.27.5
 
   # 權限檢查
-  permission_handler: "^8.1.6"
+  permission_handler: ^10.1.0
 
   # url 開啟
-  url_launcher: "^6.0.10"
+  url_launcher: ^6.1.6
 
 dev_dependencies:
 

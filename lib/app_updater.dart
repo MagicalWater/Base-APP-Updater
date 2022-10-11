@@ -48,8 +48,11 @@ class AppUpdater {
   /// 其餘系統 => 嘗試使用開啟 web
   static Future<void> update(String url, {bool openWeb = true}) async {
     print("開始更新: $url, 是否為開啟 web: $openWeb");
+
+    final uri = Uri.parse(url);
+
     // 若 url 無效則拋出錯誤
-    if (!(await _isUrlEffect(url))) {
+    if (!(await _isUrlEffect(uri))) {
       throw UpdateError.urlFail;
     }
 
@@ -57,18 +60,18 @@ class AppUpdater {
       if (!openWeb) {
         print("ios 尚不支持下載ipa更新的方式, 自動更改為開啟 web");
       }
-      await launch(url);
+      await launchUrl(uri);
     } else if (Platform.isAndroid) {
       if (!openWeb) {
         print("android 因為play商店禁止問題, 取消下載apk直接安裝更新的方式, 自動更改為開啟web");
         // await _downloadAndroidApk(url);
-        await launch(url);
+        await launchUrl(uri);
       } else {
-        await launch(url);
+        await launchUrl(uri);
       }
     } else {
       print("未知系統, 無法進行更新: ${Platform.operatingSystem}, 嘗試開啟 url web");
-      await launch(url);
+      await launchUrl(uri);
     }
   }
 
@@ -162,8 +165,8 @@ class AppUpdater {
   }
 
   /// 檢查 url 是否有效
-  static Future<bool> _isUrlEffect(String url) async {
-    return await canLaunch(url);
+  static Future<bool> _isUrlEffect(Uri uri) async {
+    return await canLaunchUrl(uri);
   }
 
   static void dispose() {
