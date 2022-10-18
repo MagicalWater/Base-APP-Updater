@@ -60,18 +60,18 @@ class AppUpdater {
       if (!openWeb) {
         print("ios 尚不支持下載ipa更新的方式, 自動更改為開啟 web");
       }
-      await launchUrl(uri);
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
     } else if (Platform.isAndroid) {
       if (!openWeb) {
         print("android 因為play商店禁止問題, 取消下載apk直接安裝更新的方式, 自動更改為開啟web");
         // await _downloadAndroidApk(url);
-        await launchUrl(uri);
+        await launchUrl(uri, mode: LaunchMode.externalApplication);
       } else {
-        await launchUrl(uri);
+        await launchUrl(uri, mode: LaunchMode.externalApplication);
       }
     } else {
       print("未知系統, 無法進行更新: ${Platform.operatingSystem}, 嘗試開啟 url web");
-      await launchUrl(uri);
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
     }
   }
 
